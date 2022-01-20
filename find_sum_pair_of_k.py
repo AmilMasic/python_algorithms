@@ -29,6 +29,16 @@
 
 
 # *** second solution with no sorting***
+
+# uses a hash_table/ dictionary
 def find_pair(arr, k):
-    
-print(find_pair([-5, 17, 2, 6, 8, 7, 1, 1, 6, 4, 9, 12], 10))
+    visited = {}
+    for element in arr:
+        if visited.get(k-element):
+            return True
+        else:
+            visited[element] = True
+    return False
+
+
+print(find_pair([-5, 17, 2, 6, 8, 7, 1, 1, 6, 4, 9, 12], 35))
